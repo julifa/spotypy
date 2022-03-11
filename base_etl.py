@@ -1,6 +1,6 @@
 from cfg import CLIENT_ID, CLIENT_SECRET, SPOTIPY_REDIRECT_URI, DB_CONNSTR
 import spotipy
-from spotipy.oauth import SpotifyOAuth
+from spotipy.Oauth import SpotifyOAuth
 from datetime import datetime, timedelta
 from spoty_etl.models import TABLENAME, TAB
 import pandas as pandas
@@ -14,7 +14,7 @@ scope = "user-read-recently-played" #Dame tu ultima playlist escuchada
 sp = spotipy.Spotify(auth_manager=SpotifyOAuth( client_id=CLIENT_ID,
                                                 client_secret=CLIENT_SECRET,
                                                 redirect_uri=SPOTIPY_REDIRECT_URI,
-                                                scope=scope)) #scope es el permiso para ver la playlist
+                                                scope=scope)) #permiso para ver la playlist
 
 
 def extract(date, limit=50):
